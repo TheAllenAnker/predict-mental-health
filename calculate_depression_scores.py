@@ -34,13 +34,15 @@ def get_weights(word_count, file_count):
 
 # 根据每个用户的词语权值计算每个用户的抑郁分数，抑郁分数的值越大，预测抑郁水平越高
 def calculate_depression_score(weights, words_count):
-    depression_score = 0
+    depression_score, hit_count = 0, 0
     for word, weight in weights.items():
         if word in negative_words:
             depression_score += (words_count[word] * weight)
-        if word in positive_words:
+            hit_count += words_count[word]
+        elif word in positive_words:
             depression_score -= (words_count[word] * weight)
-    return depression_score
+            hit_count += words_count[word]
+    return depression_score, hit_count
 
 
 # 计算抑郁分数并将分数按行存入文件中
@@ -49,6 +51,7 @@ def calculate_depression_score(weights, words_count):
 processed_file_list = os.listdir('jieba_processed_contents/word_total')
 count = 1
 depression_scores = []
+word_hit_count = []
 for processed_filename in processed_file_list:
     file_num = processed_filename.split('_')[0]
     file_total_filename = str(file_num) + '_total_file_count.csv'
@@ -67,12 +70,14 @@ for processed_filename in processed_file_list:
         file_count_dict[row[0]] = int(row[1])
 
     curr_weights = get_weights(word_count_dict, file_count_dict)
-    if count == 6:
-        print('Word count dict: ', word_count_dict)
-        print('File count dict: ', file_count_dict)
-        print('Weights: ', curr_weights)
+    depression_score, hit_count = calculate_depression_score(curr_weights, word_count_dict)
+    depression_scores.append([count, depression_score])
+    word_hit_count.append([count, hit_count])
     count += 1
-    depression_score = calculate_depression_score(curr_weights, word_count_dict)
-    depression_scores.append(depression_score)
 
 print(depression_scores)
+print(word_hit_count)
+depression_scores_sheet = pyexcel.Sheet(depression_scores)
+depression_scores_sheet.save_as('depression_scores.csv')
+word_hit_sheet = pyexcel.Sheet(word_hit_count)
+word_hit_sheet.save_as('word_hit_count.csv')

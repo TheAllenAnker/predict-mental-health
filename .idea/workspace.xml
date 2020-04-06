@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5233299f-f6ac-4dfc-bc62-b9d926307bd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k-means_clustering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculate_depression_scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculate_depression_scores.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_weibo_content.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_weibo_content.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -133,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585981668527</updated>
       <workItem from="1585981681912" duration="1497000" />
-      <workItem from="1585989428767" duration="25182000" />
+      <workItem from="1585989428767" duration="27812000" />
     </task>
     <servers />
   </component>
@@ -149,22 +148,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1586138986718" />
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1586152414647">
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1586167171541">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586152414647" />
-    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1586152414646">
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586167171541" />
+    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1586167171540">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586152414646" />
-    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1586152414645">
+    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586167171540" />
+    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1586167171539">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586152414645" />
-    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1586152414646">
+    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586167171539" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1586167171540">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586152414646" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586167171540" />
     <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1586151977668">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -191,7 +190,7 @@
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586095567207" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/predict_mental_health$calculate_depression_scores.coverage" NAME="calculate_depression_scores Coverage Results" MODIFIED="1586152414635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/predict_mental_health$calculate_depression_scores.coverage" NAME="calculate_depression_scores Coverage Results" MODIFIED="1586167171528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/predict_mental_health$read_user_ids.coverage" NAME="read_user_ids Coverage Results" MODIFIED="1585983054332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/read_xlsx" />
     <SUITE FILE_PATH="coverage/predict_mental_health$process_weibo_content.coverage" NAME="process_weibo_content Coverage Results" MODIFIED="1586138954329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

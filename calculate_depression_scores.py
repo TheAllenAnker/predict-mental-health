@@ -1,4 +1,6 @@
 import os
+import pyexcel
+import math
 
 # 将 NTUSD 的正面、负面情感字典加载入内存
 negative_words_file = open('NTUSD_negative_simplified.txt', 'r')
@@ -14,17 +16,63 @@ for line in positive_lines:
 print('Negative words in NTUSD: ', negative_words)
 print('Positive words in NTUSD: ', positive_words)
 
+# N 为每个用户共收集到的微博条数
+N = 100
+
 
 # 使用 TF-IDF 算法赋予每个词语不同的权值
-def get_weights(word_total_count_dict, word_file_count_dict):
+def get_weights(word_count, file_count):
     weights = dict()
+    # 依次计算各个词语的 TF 值，IDF 值，权值（weight）
+    for word, word_num in word_count.items():
+        if word in file_count:
+            tf = word_num / word_total_count
+            idf = math.log(N / file_count[word])
+            weights[word] = tf * idf
     return weights
 
 
-# calculate depression scores for each subject
+# 根据每个用户的词语权值计算每个用户的抑郁分数，抑郁分数的值越大，预测抑郁水平越高
 def calculate_depression_score(weights, words_count):
-    return 0
+    depression_score = 0
+    for word, weight in weights.items():
+        if word in negative_words:
+            depression_score += (words_count[word] * weight)
+        if word in positive_words:
+            depression_score -= (words_count[word] * weight)
+    return depression_score
 
 
-depression_scores = calculate_depression_scores()
+# 计算抑郁分数并将分数按行存入文件中
+
+# 加载词语统计数据
+processed_file_list = os.listdir('jieba_processed_contents/word_total')
+count = 1
+depression_scores = []
+for processed_filename in processed_file_list:
+    file_num = processed_filename.split('_')[0]
+    file_total_filename = str(file_num) + '_total_file_count.csv'
+    word_total_filename = str(file_num) + '_word_total.csv'
+    word_count_sheet = pyexcel.get_sheet(file_name='jieba_processed_contents/word_total/' + word_total_filename)
+    file_count_sheet = pyexcel.get_sheet(file_name='jieba_processed_contents/file_total/' + file_total_filename)
+    word_count_dict = dict()
+    file_count_dict = dict()
+    word_total_count = 0
+
+    # 将两个统计文件中的两列分别存入字典中
+    for row in word_count_sheet:
+        word_count_dict[row[0]] = int(row[1])
+        word_total_count += int(row[1])
+    for row in file_count_sheet:
+        file_count_dict[row[0]] = int(row[1])
+
+    curr_weights = get_weights(word_count_dict, file_count_dict)
+    if count == 6:
+        print('Word count dict: ', word_count_dict)
+        print('File count dict: ', file_count_dict)
+        print('Weights: ', curr_weights)
+    count += 1
+    depression_score = calculate_depression_score(curr_weights, word_count_dict)
+    depression_scores.append(depression_score)
+
 print(depression_scores)

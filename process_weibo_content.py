@@ -11,6 +11,7 @@ for raw_file_name in raw_file_list:
     word_total_count = dict()
     word_file_count = dict()
     sheet = pyexcel.get_sheet(file_name='user_raw_contents/' + raw_file_name)
+    # 处理该用户的每条微博
     for row in sheet:
         # 读取一条微博的初始内容
         # 数据清洗

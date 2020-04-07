@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5233299f-f6ac-4dfc-bc62-b9d926307bd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/k-means_clustering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculate_depression_scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculate_depression_scores.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k-means_clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_clustering.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
       <recent name="$PROJECT_DIR$/read_xlsx" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.calculate_depression_scores">
+  <component name="RunManager" selected="Python.k-means_clustering">
     <configuration name="calculate_depression_scores" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="predict_mental_health" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,6 +60,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculate_depression_scores.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="k-means_clustering" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="predict_mental_health" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/k-means_clustering.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,6 +136,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.k-means_clustering" />
         <item itemvalue="Python.calculate_depression_scores" />
         <item itemvalue="Python.process_weibo_content" />
         <item itemvalue="Python.read_user_ids" />
@@ -132,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585981668527</updated>
       <workItem from="1585981681912" duration="1497000" />
-      <workItem from="1585989428767" duration="27812000" />
+      <workItem from="1585989428767" duration="35411000" />
     </task>
     <servers />
   </component>
@@ -148,22 +170,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1586138986718" />
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1586167171541">
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1586185298610">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586167171541" />
-    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1586167171540">
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586185298610" />
+    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1586185298609">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586167171540" />
-    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1586167171539">
+    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586185298609" />
+    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1586185298609">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586167171539" />
-    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1586167171540">
+    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586185298609" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1586185298610">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586167171540" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586185298610" />
     <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1586151977668">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -184,13 +206,14 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="413" y="294" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1585989430722" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1586095567207">
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1586183300078">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586095567207" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1586183300078" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/predict_mental_health$calculate_depression_scores.coverage" NAME="calculate_depression_scores Coverage Results" MODIFIED="1586167171528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/predict_mental_health$calculate_depression_scores.coverage" NAME="calculate_depression_scores Coverage Results" MODIFIED="1586167277279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/predict_mental_health$k_means_clustering.coverage" NAME="k-means_clustering Coverage Results" MODIFIED="1586185298598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/predict_mental_health$read_user_ids.coverage" NAME="read_user_ids Coverage Results" MODIFIED="1585983054332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/read_xlsx" />
     <SUITE FILE_PATH="coverage/predict_mental_health$process_weibo_content.coverage" NAME="process_weibo_content Coverage Results" MODIFIED="1586138954329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

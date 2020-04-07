@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: '聚类结果分布图',
+    },
+    grid: {
+        left: '3%',
+        right: '7%',
+        bottom: '3%',
+        containLabel: true
+    },
+    tooltip: {
+        // trigger: 'axis',
+        showDelay: 0,
+        formatter: function (params) {
+            if (params.value.length > 1) {
+                return params.seriesName + ' :<br/>'
+                + params.value[0] + 'hits '
+                + params.value[1] + 'points ';
+            }
+            else {
+                return params.seriesName + ' :<br/>'
+                + params.name + ' : '
+                + params.value + 'points ';
+            }
+        },
+        axisPointer: {
+            show: true,
+            type: 'cross',
+            lineStyle: {
+                type: 'dashed',
+                width: 1
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataZoom: {},
+            brush: {
+                type: ['rect', 'polygon', 'clear']
+            }
+        }
+    },
+    brush: {
+    },
+    legend: {
+        data: ['聚类 1', '聚类 2'],
+        left: 'center'
+    },
+    xAxis: [
+        {
+            type: 'value',
+            scale: true,
+            axisLabel: {
+                formatter: '命中 {value} 次'
+            },
+            splitLine: {
+                show: false
+            }
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            scale: true,
+            axisLabel: {
+                formatter: '{value} points'
+            },
+            splitLine: {
+                show: false
+            }
+        }
+    ],
+    series: [
+        {
+            name: '聚类 1',
+            type: 'scatter',
+            data: [[245.0, 0.0885716078118644], [121.0, -0.25712726175531736], [326.0, -0.06445589786311332], [242.0, -0.11570178214981487], [51.0, -0.12049349234692103], [64.0, 0.03017737453580112], [281.0, -0.3607782369317755], [494.0, -0.18040664739239895], [343.0, -0.07955280619381289], [460.0, -0.23750994737095715], [120.0, -0.06905476478661092], [482.0, 0.0915260110342676], [161.0, 0.10301199385172236], [136.0, 0.1510959439568694], [207.0, 0.0999380489162356], [524.0, -0.1560445535926393], [250.0, 0.2234523888202374], [337.0, 0.11185783653845173], [132.0, -0.07662336553252977], [108.0, 0.13014903518986481], [87.0, 0.020673050912153698], [498.0, -0.15176764477877447], [132.0, 1.2019737284720018], [187.0, 0.20695285993884716], [69.0, -0.17320580182259335], [156.0, -0.15704741892234914], [333.0, 0.024336885722448465], [183.0, 0.15723624043671214], [149.0, 0.07460973400679284], [186.0, -0.007861044563243356], [128.0, -0.14762084711993076], [265.0, -0.08529794909448887], [162.0, 0.23816607472068668], [381.0, -0.005713078181852194], [181.0, -0.7556365947445279]
+
+            ],
+            markArea: {
+                silent: true,
+                itemStyle: {
+                    color: 'transparent',
+                    borderWidth: 1,
+                    borderType: 'dashed'
+                },
+                data: [[{
+                    name: '聚类 1 分布区间',
+                    xAxis: 'min',
+                    yAxis: 'min'
+                }, {
+                    xAxis: 'max',
+                    yAxis: 'max'
+                }]]
+            },
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            }
+        },
+        {
+            name: '聚类 2',
+            type: 'scatter',
+            data: [
+            [1135.0, 0.13585560033039826], [956.0, -0.4545977736964265], [693.0, -0.13119593285062484], [1216.0, 0.0036210811916597926], [1044.0, -0.09121819390684874]
+            ],
+            markArea: {
+                silent: true,
+                itemStyle: {
+                    color: 'transparent',
+                    borderWidth: 1,
+                    borderType: 'dashed'
+                },
+                data: [[{
+                    name: '聚类 2 分布区间',
+                    xAxis: 'min',
+                    yAxis: 'min'
+                }, {
+                    xAxis: 'max',
+                    yAxis: 'max'
+                }]]
+            },
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                    {type: 'min', name: '最小值'}
+                ]
+            }
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

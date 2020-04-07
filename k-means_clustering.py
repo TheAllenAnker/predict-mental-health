@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn import metrics
 from scipy.spatial.distance import cdist
+from pyecharts.charts import Scatter
+from pyecharts import options as opts
 
 # 读取文件中每个研究对象的抑郁分数、词典命中数两项数据
 depression_scores_sheet = pyexcel.get_sheet(file_name='depression_scores.csv')
@@ -44,6 +46,50 @@ plt.grid(True)
 colors = ['r', 'c']
 markers = ['o', 'v']
 kmeans_model = KMeans(n_clusters=2).fit(data)
-for i, j in enumerate(kmeans_model.labels_):
-    plt.plot(word_hit_arr[i], depression_score_arr[i], color=colors[j], marker=markers[j], ls='None')
-plt.show()
+# for i, j in enumerate(kmeans_model.labels_):
+#     plt.plot(word_hit_arr[i], depression_score_arr[i], color=colors[j], marker=markers[j], ls='None')
+# plt.show()
+
+print(data)
+# 分别将K-means分类结果存入两个数组中
+cluster1 = []
+cluster2 = []
+for i, cluster in enumerate(kmeans_model.labels_):
+    if cluster == 1:
+        cluster2.append(data[i])
+    else:
+        cluster1.append(data[i])
+
+print('Cluster 1: ', cluster1)
+print('Cluster 2: ', cluster2)
+x_data1, x_data2 = [], []
+y_data1, y_data2 = [], []
+for i in range(len(cluster1)):
+    x_data1.append(cluster1[i][0])
+    y_data1.append(cluster1[i][1])
+for i in range(len(cluster2)):
+    x_data2.append(cluster2[i][0])
+    y_data2.append(cluster2[i][1])
+print(x_data1, y_data1)
+print(x_data2, y_data2)
+group1_arr, group2_arr = [], []
+for i in range(len(x_data1)):
+    group1_arr.append([x_data1[i], y_data1[i]])
+for i in range(len(x_data2)):
+    group2_arr.append([x_data2[i], y_data2[i]])
+print(group1_arr)
+print(group2_arr)
+# 使用 pyecharts 进行可视化
+fig_size = opts.InitOpts(width='800px', height='600px')
+scatter = Scatter(init_opts=fig_size)
+# scatter.add_xaxis(xaxis_data=x_data1)
+# scatter.add_yaxis(series_name='聚类 1',
+#                   y_axis=y_data1,
+#                   color='red',
+#                   label_opts=opts.LabelOpts(is_show=False),
+#                   symbol='circle')
+# scatter.add_yaxis(series_name='聚类 2',
+#                   y_axis=y_data2,
+#                   label_opts=opts.LabelOpts(is_show=True),
+#                   symbol_size=15,
+#                   symbol='triangle')
